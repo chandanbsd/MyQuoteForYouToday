@@ -1,0 +1,7 @@
+﻿services:
+  myquoteforyoutoday.api:
+    image: myquoteforyoutoday.api
+    build:
+      context: .
+      dockerfile: MyQuoteForYouToday.Api/Dockerfile
+
