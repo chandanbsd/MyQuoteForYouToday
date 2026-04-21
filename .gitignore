@@ -1,0 +1,95 @@
+## .NET / C#
+
+# Build output
+bin/
+obj/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+!**/packages/repositories.config
+
+# NuGet v3+
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# MSBuild
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# Visual Studio
+.vs/
+*.rsuser
+*.vsp
+*.vspx
+*.sap
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Publish output
+publish/
+**/publish/
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Crash dumps
+*.dmp
+
+## ASP.NET / Aspire
+
+# User secrets (never commit)
+secrets.json
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+
+# Aspire dashboard / orchestration local state
+.aspire/
+
+## Docker
+
+.dockerignore.bak
+
+## OS
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+## Logs & temp files
+
+*.log
+*.tmp
+*.temp
+*.cache

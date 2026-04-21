@@ -1,13 +1,9 @@
-// <copyright file="Base.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
 namespace MyQuoteForYouToday.Data.Entities;
 
 /// <summary>
 /// The base entity.
 /// </summary>
-public class Base
+public class Audit
 {
     /// <summary>
     /// Gets the identifier.
@@ -44,9 +40,9 @@ public class Base
     /// </summary>
     /// <param name="createdById">The created by identifier.</param>
     /// <returns>The base.</returns>
-    public static Base Create(int createdById)
+    public static Audit Create(int createdById)
     {
-        return new Base()
+        return new Audit()
         {
             CreatedOn = DateTime.UtcNow,
             CreatedById = createdById,
@@ -58,8 +54,7 @@ public class Base
     /// Creates the base entity.
     /// </summary>
     /// <param name="userId">The user identifier.</param>
-    /// <returns>The base.</returns>
-    public Base Updated(int userId)
+    public void Updated(int userId)
     {
         UpdatedOn = DateTime.UtcNow;
         UpdatedById = userId;

@@ -1,4 +1,0 @@
-/Users/chandanbsd/dev/MyQuoteForYouToday/MyQuoteForYouToday.Data/obj/Debug/net10.0/MyQuoteForYouToday.Data.GeneratedMSBuildEditorConfig.editorconfig
-/Users/chandanbsd/dev/MyQuoteForYouToday/MyQuoteForYouToday.Data/obj/Debug/net10.0/MyQuoteForYouToday.Data.AssemblyInfoInputs.cache
-/Users/chandanbsd/dev/MyQuoteForYouToday/MyQuoteForYouToday.Data/obj/Debug/net10.0/MyQuoteForYouToday.Data.AssemblyInfo.cs
-/Users/chandanbsd/dev/MyQuoteForYouToday/MyQuoteForYouToday.Data/obj/Debug/net10.0/MyQuoteForYouToday.Data.csproj.CoreCompileInputs.cache
