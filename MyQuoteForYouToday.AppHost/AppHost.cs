@@ -1,6 +1,7 @@
-#pragma warning disable SA1200
+using System;
+using Aspire.Hosting;
 using Microsoft.Extensions.Configuration;
-#pragma warning restore SA1200
+using Projects;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
@@ -21,14 +22,20 @@ try
         Console.WriteLine("Required configuration values are not set");
         return;
     }
+
+    var databaseServer = builder.AddPostgres(
+        name: databaseServerName);
+    var database = databaseServer.AddDatabase(
+        name: databaseName);
+
+    var api = builder
+        .AddProject<MyQuoteForYouToday_Api>("Api")
+        .WithReference(database);
+
+    builder.Build().Run();
 }
 catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
     return;
 }
-
-var database = builder.AddPostgres(
-    name: databaseServerName);
-
-builder.Build().Run();

@@ -2,13 +2,13 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-using Microsoft.AspNetCore.Mvc;
-
 namespace MyQuoteForYouToday.Api.Controllers;
 
+/// <summary>
+/// Controller for managing quotes.
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class QuotesController : ControllerBase
 {
-    
 }

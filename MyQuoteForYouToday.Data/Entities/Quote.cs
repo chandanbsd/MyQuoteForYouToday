@@ -1,5 +1,10 @@
+using System;
+
 namespace MyQuoteForYouToday.Data.Entities;
 
+/// <summary>
+/// The quote entity.
+/// </summary>
 public class Quote
 {
     /// <summary>
@@ -15,8 +20,8 @@ public class Quote
     /// <summary>
     /// Gets the text.
     /// </summary>
-    public string Text { get; private set; }
-    
+    public string Text { get; private set; } = string.Empty;
+
     /// <summary>
     /// Gets the author identifier.
     /// </summary>

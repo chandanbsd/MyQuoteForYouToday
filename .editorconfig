@@ -3,3 +3,6 @@ root = true
 [*.cs]
 # SA1101: Prefix local calls with this — disabled
 dotnet_diagnostic.SA1101.severity = none
+dotnet_diagnostic.SA1200.severity = none
+dotnet_diagnostic.SA1516.severity = none
+dotnet_diagnostic.SA1633.severity = none

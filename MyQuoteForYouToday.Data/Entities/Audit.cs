@@ -1,3 +1,5 @@
+using System;
+
 namespace MyQuoteForYouToday.Data.Entities;
 
 /// <summary>
@@ -39,22 +41,18 @@ public class Audit
     /// Creates the base entity.
     /// </summary>
     /// <param name="createdById">The created by identifier.</param>
-    /// <returns>The base.</returns>
-    public static Audit Create(int createdById)
+    public void AuditCreate(int createdById)
     {
-        return new Audit()
-        {
-            CreatedOn = DateTime.UtcNow,
-            CreatedById = createdById,
-            Guid = Guid.NewGuid(),
-        };
+        CreatedOn = DateTime.UtcNow;
+        CreatedById = createdById;
+        Guid = Guid.NewGuid();
     }
 
     /// <summary>
     /// Creates the base entity.
     /// </summary>
     /// <param name="userId">The user identifier.</param>
-    public void Updated(int userId)
+    public void AuditUpdate(int userId)
     {
         UpdatedOn = DateTime.UtcNow;
         UpdatedById = userId;
