@@ -1,11 +1,12 @@
 using System;
+using MyQuoteForYouToday.Data.Entity.Interface;
 
 namespace MyQuoteForYouToday.Data.Entities;
 
 /// <summary>
 /// The base entity.
 /// </summary>
-public class Audit
+public class Audit : IAudit
 {
     /// <summary>
     /// Gets the identifier.

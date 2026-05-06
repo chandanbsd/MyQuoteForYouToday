@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="../MyQuoteForYouToday.Contract/MyQuoteForYouToday.Contract.csproj" />
       <ProjectReference Include="..\MyQuoteForYouToday.Data\MyQuoteForYouToday.Data.csproj" />
     </ItemGroup>
 

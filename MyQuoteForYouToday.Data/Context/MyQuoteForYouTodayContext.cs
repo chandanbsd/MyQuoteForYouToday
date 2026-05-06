@@ -1,17 +1,14 @@
+using Microsoft.Extensions.Logging;
+
 namespace MyQuoteForYouToday.Data.Context;
 
 /// <summary>
 /// The my quote for today context.
 /// </summary>
-public partial class MyQuoteForYouTodayContext : DbContext
+/// <param name="logger">The logger.</param>
+public partial class MyQuoteForYouTodayContext(
+    ILogger<MyQuoteForYouTodayContext> logger) : DbContext
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MyQuoteForYouTodayContext"/> class.
-    /// </summary>
-    public MyQuoteForYouTodayContext()
-    {
-    }
-
     /// <summary>
     /// Gets the authors.
     /// </summary>

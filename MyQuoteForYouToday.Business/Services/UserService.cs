@@ -1,4 +1,5 @@
 using MyQuoteForYouToday.Business.Services.Interfaces;
+using MyQuoteForYouToday.Contract;
 using MyQuoteForYouToday.Data.Context.Interfaces;
 using MyQuoteForYouToday.Data.Entities;
 
@@ -8,12 +9,12 @@ namespace MyQuoteForYouToday.Business.Services;
 /// The user service.
 /// </summary>
 public class UserService(
-    IMyQuoteForYouTodayContext context) : IUserService
+    IMyQuoteForYouTodayContext dbContext) : IUserService
 {
     /// <inheritdoc cref="IUserService.GetUser"/>
     public async Task<User?> GetUser(string userName)
     {
-        return await context.GetUser(userName);
+        return await dbContext.GetUser(userName);
     }
 
     /// <summary>
@@ -26,6 +27,11 @@ public class UserService(
     public async Task<User> CreateUser(string firstName, string lastName, string userName)
     {
         var user = User.Create(firstName, lastName, userName, -1);
-        return
+        return new UserDto
+        {
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            UserName = user.UserName,
+        };
     }
 }
