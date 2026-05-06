@@ -1,0 +1,31 @@
+using MyQuoteForYouToday.Business.Services.Interfaces;
+using MyQuoteForYouToday.Data.Context.Interfaces;
+using MyQuoteForYouToday.Data.Entities;
+
+namespace MyQuoteForYouToday.Business.Services;
+
+/// <summary>
+/// The user service.
+/// </summary>
+public class UserService(
+    IMyQuoteForYouTodayContext context) : IUserService
+{
+    /// <inheritdoc cref="IUserService.GetUser"/>
+    public async Task<User?> GetUser(string userName)
+    {
+        return await context.GetUser(userName);
+    }
+
+    /// <summary>
+    /// Creates the user.
+    /// </summary>
+    /// <param name="firstName">The first name.</param>
+    /// <param name="lastName">The last name.</param>
+    /// <param name="userName">The user name.</param>
+    /// <returns>The user.</returns>
+    public async Task<User> CreateUser(string firstName, string lastName, string userName)
+    {
+        var user = User.Create(firstName, lastName, userName, -1);
+        return
+    }
+}
