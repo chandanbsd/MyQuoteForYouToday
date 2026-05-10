@@ -5,7 +5,8 @@
       "Bash(dotnet list package *)",
       "Bash(dotnet list *)",
       "Bash(dotnet package *)",
-      "Bash(dotnet restore *)"
+      "Bash(dotnet restore *)",
+      "Bash(xargs ls)"
     ]
   }
 }

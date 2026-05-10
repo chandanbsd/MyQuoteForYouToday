@@ -11,9 +11,9 @@ string? databaseServerName = null,
 
 try
 {
-    databaseServerName = builder.Configuration.GetValue<string>("ServerName");
-    databaseName = builder.Configuration.GetValue<string>("DatabaseName");
-    databaseUserName = builder.Configuration.GetValue<string>("UserName");
+    databaseServerName = builder.Configuration.GetValue<string>("DatabaseServer:ServerName");
+    databaseName = builder.Configuration.GetValue<string>("DatabaseServer:DatabaseName");
+    databaseUserName = builder.Configuration.GetValue<string>("DatabaseServer:UserName");
 
     if (string.IsNullOrEmpty(databaseServerName)
         || string.IsNullOrEmpty(databaseName)

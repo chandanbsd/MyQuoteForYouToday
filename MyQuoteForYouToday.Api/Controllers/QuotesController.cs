@@ -2,6 +2,9 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
+using MyQuoteForYouToday.Business.Services.Interfaces;
+using MyQuoteForYouToday.Contract;
+
 namespace MyQuoteForYouToday.Api.Controllers;
 
 /// <summary>
@@ -9,6 +12,19 @@ namespace MyQuoteForYouToday.Api.Controllers;
 /// </summary>
 [ApiController]
 [Route("[controller]")]
-public class QuotesController : ControllerBase
+public class QuotesController (IUserService userService) : ControllerBase
 {
+    /// <summary>
+    /// Creates the user.
+    /// </summary>
+    /// <param name="user">The user payload.</param>
+    /// <returns>The user data transfer object.</returns>
+    [HttpPost]
+    public async Task<UserDto?> CreateUser(UserPayload user)
+    {
+        return await userService.CreateUser(
+            user.FirstName,
+            user.LastName,
+            user.UserName);
+    }
 }
