@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dotnet build *)"
+      "Bash(dotnet build *)",
+      "Bash(dotnet list package *)",
+      "Bash(dotnet list *)",
+      "Bash(dotnet package *)",
+      "Bash(dotnet restore *)"
     ]
   }
 }

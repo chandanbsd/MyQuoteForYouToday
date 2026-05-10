@@ -1,3 +1,4 @@
+using MyQuoteForYouToday.Contract;
 using MyQuoteForYouToday.Data.Entities;
 
 namespace MyQuoteForYouToday.Business.Services.Interfaces;
@@ -13,8 +14,8 @@ public interface IUserService
     /// <param name="firstName">The first name.</param>
     /// <param name="lastName">The last name.</param>
     /// <param name="userName">The user name.</param>
-    /// <returns>An empty task.</returns>
-    Task CreateUser(
+    /// <returns>An user data transfer object.</returns>
+    Task<UserDto?> CreateUser(
         string firstName,
         string lastName,
         string userName);

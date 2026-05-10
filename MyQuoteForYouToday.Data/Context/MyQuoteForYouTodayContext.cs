@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using MyQuoteForYouToday.Data.Context.Interfaces;
 
 namespace MyQuoteForYouToday.Data.Context;
 
@@ -7,7 +8,7 @@ namespace MyQuoteForYouToday.Data.Context;
 /// </summary>
 /// <param name="logger">The logger.</param>
 public partial class MyQuoteForYouTodayContext(
-    ILogger<MyQuoteForYouTodayContext> logger) : DbContext
+    ILogger<MyQuoteForYouTodayContext> logger) : DbContext, IMyQuoteForYouTodayContext
 {
     /// <summary>
     /// Gets the authors.

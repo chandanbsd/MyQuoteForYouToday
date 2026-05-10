@@ -24,14 +24,14 @@ public class UserService(
     /// <param name="lastName">The last name.</param>
     /// <param name="userName">The user name.</param>
     /// <returns>The user.</returns>
-    public async Task<User> CreateUser(string firstName, string lastName, string userName)
+    public async Task<UserDto?> CreateUser(string firstName, string lastName, string userName)
     {
         var user = User.Create(firstName, lastName, userName, -1);
-        return new UserDto
-        {
-            FirstName = user.FirstName,
-            LastName = user.LastName,
-            UserName = user.UserName,
-        };
+        await dbContext.AddEntity(user, true);
+
+        return new UserDto(
+            user.FirstName,
+            user.LastName,
+            user.UserName);
     }
 }

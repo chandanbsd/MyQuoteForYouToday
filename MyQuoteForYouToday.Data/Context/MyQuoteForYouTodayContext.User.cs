@@ -1,3 +1,5 @@
+using MyQuoteForYouToday.Data.Context.Interfaces;
+
 namespace MyQuoteForYouToday.Data.Context;
 
 using System.Linq;
@@ -7,14 +9,7 @@ using System.Linq;
 /// </summary>
 public partial class MyQuoteForYouTodayContext
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MyQuoteForYouTodayContext"/> class.
-    /// </summary>
-    public MyQuoteForYouTodayContext()
-    {
-    }
-
-    /// <inheritdoc cref="IUserService.GetUser"/>
+    /// <inheritdoc cref="IMyQuoteForYouTodayContext.GetUser"/>
     public async Task<User?> GetUser(string userName)
     {
         return await Users
