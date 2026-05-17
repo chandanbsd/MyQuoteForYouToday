@@ -39,7 +39,7 @@ public partial class MyQuoteForYouTodayContext
         }
         catch
         {
-            logger.LogError("Could not fetch {entityName} with Guid {entityGuid}", nameof(T), id);
+            logger?.LogError("Could not fetch {entityName} with Guid {entityGuid}", nameof(T), id);
             throw new Exception($"Could not fetch {nameof(T)} with Guid {id}");
         }
     }

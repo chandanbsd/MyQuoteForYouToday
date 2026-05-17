@@ -5,9 +5,11 @@ namespace MyQuoteForYouToday.Data.Context;
 /// <summary>
 /// The my quote for today context.
 /// </summary>
+/// <param name="options">The options.</param>
 /// <param name="logger">The logger.</param>
 public partial class MyQuoteForYouTodayContext(
-    ILogger<MyQuoteForYouTodayContext> logger) : DbContext, IMyQuoteForYouTodayContext
+    DbContextOptions<MyQuoteForYouTodayContext> options,
+    ILogger<MyQuoteForYouTodayContext>? logger = null) : DbContext(options), IMyQuoteForYouTodayContext
 {
     /// <summary>
     /// Gets the authors.

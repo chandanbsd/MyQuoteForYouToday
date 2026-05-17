@@ -1,25 +1,18 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyQuoteForYouToday.Data.Entities;
 
 /// <summary>
 /// The quote entity.
 /// </summary>
-public class Quote
+public class Quote : Audit
 {
-    /// <summary>
-    /// Gets the identifier.
-    /// </summary>
-    public int Id { get; private set; }
-
-    /// <summary>
-    /// Gets the Guid.
-    /// </summary>
-    public Guid Guid { get; private set; }
-
     /// <summary>
     /// Gets the text.
     /// </summary>
+    [Required]
+    [MaxLength(1000)]
     public string Text { get; private set; } = string.Empty;
 
     /// <summary>

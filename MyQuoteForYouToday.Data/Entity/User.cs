@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace MyQuoteForYouToday.Data.Entities;
 
 /// <summary>
@@ -8,16 +10,22 @@ public class User : Audit
     /// <summary>
     /// Gets the user's first name.
     /// </summary>
+    [Required]
+    [MaxLength(256)]
     public string FirstName { get; private set; } = string.Empty;
 
     /// <summary>
     /// Gets the user's last name.
     /// </summary>
+    [Required]
+    [MaxLength(256)]
     public string LastName { get; private set; } = string.Empty;
 
     /// <summary>
     /// Gets the username.
     /// </summary>
+    [Required]
+    [MaxLength(256)]
     public string UserName { get; private set; } = string.Empty;
 
     /// <summary>

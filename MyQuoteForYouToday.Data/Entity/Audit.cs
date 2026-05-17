@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using MyQuoteForYouToday.Data.Entity.Interface;
 
 namespace MyQuoteForYouToday.Data.Entities;
@@ -11,16 +12,19 @@ public class Audit : IAudit
     /// <summary>
     /// Gets the identifier.
     /// </summary>
+    [Required]
     public int Id { get; private set; }
 
     /// <summary>
     /// Gets the Guid.
     /// </summary>
+    [Required]
     public Guid Guid { get; private set; }
 
     /// <summary>
     /// Gets the created on.
     /// </summary>
+    [Required]
     public DateTime CreatedOn { get; private set; }
 
     /// <summary>
@@ -31,6 +35,7 @@ public class Audit : IAudit
     /// <summary>
     /// Gets the created by identifier.
     /// </summary>
+    [Required]
     public int CreatedById { get; private set; }
 
     /// <summary>
