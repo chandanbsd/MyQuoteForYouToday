@@ -12,7 +12,16 @@ builder.AddServiceDefaults();
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
-builder.AddNpgsqlDbContext<MyQuoteForYouTodayContext>("MyQuoteForYouTodayDb");
+var databaseServerName = builder.Configuration.GetValue<string?>("Parameter:DatabaseServerName");
+var databaseName = builder.Configuration.GetValue<string?>("Parameter:DatabaseName");
+
+if (string.IsNullOrEmpty(databaseServerName) || string.IsNullOrEmpty(databaseName))
+{
+    Console.WriteLine("Database Server Name or Database Name is not set");
+    throw new Exception("Database Server Name or Database Name is not set");
+}
+
+builder.AddNpgsqlDbContext<MyQuoteForYouTodayContext>(databaseName);
 builder.Services.AddScoped<IMyQuoteForYouTodayContext>(sp =>
     sp.GetRequiredService<MyQuoteForYouTodayContext>());
 builder.Services.AddScoped<IUserService, UserService>();
