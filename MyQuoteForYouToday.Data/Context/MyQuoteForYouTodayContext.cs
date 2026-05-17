@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Logging;
 using MyQuoteForYouToday.Data.Context.Interfaces;
 
 namespace MyQuoteForYouToday.Data.Context;
