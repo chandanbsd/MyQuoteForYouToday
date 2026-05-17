@@ -26,7 +26,8 @@ public partial interface IMyQuoteForYouTodayContext
     /// <typeparam name="T">Any type that conforms to the entity (class that represents a database table in efcore).</typeparam>
     /// <param name="entity">The entity.</param>
     /// <param name="saveChanges">A value indicating whether to save changes.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>An empty task.</returns>
-    Task AddEntity<T>(T entity, bool saveChanges)
+    Task AddEntity<T>(T entity, bool saveChanges, CancellationToken cancellationToken = default)
         where T : class;
 }

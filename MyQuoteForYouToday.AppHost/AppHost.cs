@@ -1,4 +1,3 @@
-using Aspire.Hosting;
 using Projects;
 
 var builder = DistributedApplication.CreateBuilder(args);
@@ -20,8 +19,13 @@ var database = builder
     .AddPostgres(databaseServerName)
     .AddDatabase(databaseName);
 
-builder.AddProject<MyQuoteForYouToday_Api>("Api")
+var migrations = builder.AddProject<MyQuoteForYouToday_MigrationService>("migrations")
     .WithReference(database)
     .WaitFor(database);
+
+builder.AddProject<MyQuoteForYouToday_Api>("Api")
+    .WithReference(database)
+    .WaitFor(database)
+    .WaitFor(migrations);
 
 builder.Build().Run();

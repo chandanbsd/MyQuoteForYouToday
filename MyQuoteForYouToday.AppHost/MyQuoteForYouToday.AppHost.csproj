@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyQuoteForYouToday.Api\MyQuoteForYouToday.Api.csproj" />
+    <ProjectReference Include="..\MyQuoteForYouToday.MigrationService\MyQuoteForYouToday.MigrationService.csproj" />
   </ItemGroup>
 
   <ItemGroup>

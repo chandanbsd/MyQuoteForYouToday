@@ -17,13 +17,13 @@ public partial class MyQuoteForYouTodayContext
         => AddEntity(entity, saveChanges: true);
 
     /// <inheritdoc cref="IMyQuoteForYouTodayContext.AddEntity{T}(T)"/>
-    public async Task AddEntity<T>(T entity, bool saveChanges)
+    public async Task AddEntity<T>(T entity, bool saveChanges, CancellationToken cancellationToken = default)
         where T : class
     {
         Set<T>().Add(entity);
         if (saveChanges)
         {
-            await SaveChangesAsync();
+            await SaveChangesAsync(cancellationToken);
         }
     }
 
