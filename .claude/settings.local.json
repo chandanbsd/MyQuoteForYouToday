@@ -6,7 +6,8 @@
       "Bash(dotnet list *)",
       "Bash(dotnet package *)",
       "Bash(dotnet restore *)",
-      "Bash(xargs ls)"
+      "Bash(xargs ls)",
+      "Bash(ls ~/.nuget/packages/microsoft.extensions.hosting.abstractions/ | sort -V)"
     ]
   }
 }
