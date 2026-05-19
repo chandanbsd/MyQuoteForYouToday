@@ -6,7 +6,7 @@ var username = builder.AddParameter("PostgresUser", secret: true);
 var password = builder.AddParameter("PostgresPassword", secret: true);
 
 var database = builder
-    .AddPostgres("postgres", username, password)
+    .AddPostgres("postgres", username, password, 5432)
     .AddDatabase("myquotedb");
 
 var migrations = builder.AddProject<MyQuoteForYouToday_MigrationService>("migrations")
